@@ -1,0 +1,140 @@
+html,
+body,
+.Calendar-vue,
+.Calendar-vue * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.Calendar-vue {
+  width: 100%;
+  height: 100%;
+  min-width: 460px;
+  min-height: 394px;
+}
+.cv-controlBox {
+  width: 100%;
+  height: 56px;
+  line-height: 56px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  background-color: #f5f7fa;
+  position: relative;
+  text-align: center;
+}
+.cv-arrowLeft {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  left: 20px;
+  top: 18px;
+  border-top: 2px solid #4b7df6;
+  border-left: 2px solid #4b7df6;
+  transform: rotate(-45deg);
+  cursor: pointer;
+}
+.cv-title {
+  font-size: 18px;
+  color: #333333;
+}
+.cv-arrowRight {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  border-top: 2px solid #4b7df6;
+  border-right: 2px solid #4b7df6;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+.cv-contentBox {
+  float: left;
+  width: 100%;
+  padding-bottom: 30px;
+  border: 1px solid #f5f7fa;
+  box-sizing: border-box;
+}
+.cv-top {
+  float: left;
+  width: 100%;
+  margin-top: 30px;
+  font-size: 16px;
+  color: #9da5b1;
+  padding: 0 2%;
+  box-sizing: border-box;
+}
+.cv-top .cv-label {
+  float: left;
+  width: 14.28571428%;
+  text-align: center;
+  line-height: 1;
+}
+.cv-main {
+  float: left;
+  width: 100%;
+  padding: 0 2%;
+  box-sizing: border-box;
+}
+.cv-item {
+  float: left;
+  width: 14.28571428%;
+  text-align: center;
+  line-height: 1;
+  margin-top: 22px;
+  position: relative;
+}
+.cv-date {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  font-size: 14px;
+  color: #333333;
+  cursor: pointer;
+  position: relative;
+}
+.cv-prev .cv-date,
+.cv-next .cv-date {
+  color: #cccccc;
+}
+.cv-click-Box{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+.cv-today {
+  background-color: #4b7df6;
+  color: #fff;
+}
+.cv-date:hover{
+    background-color: #4B7DF6;
+    color: #fff;
+}
+.cv-circle{
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    left: 50%;
+    bottom: -8px;
+    margin-left: -3px;
+    background-color: #4B7DF6;
+    border-radius: 50%;
+}
+.cv-circle-label{
+    background-color: transparent !important;
+    font-size: 12px;
+    width: 100%;
+    height: auto;
+    line-height: normal;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+    overflow: hidden;
+    left: 0;
+    margin-left: 0;
+    bottom: -15px;
+}
