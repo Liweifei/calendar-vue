@@ -1,4 +1,4 @@
-## calendar-vue
+## vue-calendar-ui
 一款高效、简洁、功能丰富、宽度可自适应的pc端考勤日历插件
 
 ## Install
