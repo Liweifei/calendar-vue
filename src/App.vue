@@ -1,5 +1,5 @@
 <template>
-  <div class="Calendar-vue">
+  <div class="vue-calendar-ui">
     <div class="cv-controlBox">
       <div
         class="cv-arrowLeft"
@@ -81,7 +81,7 @@
 import util from "./util";
 
 export default {
-  name: "Calendar-vue",
+  name: "vue-calendar-ui",
   props: {
     // sundayStart: false,// 默认是周一开始，周一或周天开始相应的位置也要改一下
     sundayStart: {

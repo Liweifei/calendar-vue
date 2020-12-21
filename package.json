@@ -1,11 +1,11 @@
 {
-  "name": "calendar-vue",
-  "description": "一款新颖的日历插件",
+  "name": "vue-calendar-ui",
+  "description": "一款高效、简洁、功能丰富的考勤日历插件",
   "version": "1.0.0",
-  "author": "Liweifei <1195669615@qq.com>",
+  "author": "liweifei",
   "license": "MIT",
-  "private": true,
-  "main": "dist/calendar-vue.js",
+  "private": false,
+  "main": "lib/main.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
@@ -13,6 +13,15 @@
   "dependencies": {
     "vue": "^2.5.11"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Liweifei/calendar-vue.git"
+  },
+  "keywords": [
+    "calendar",
+    "vue-calendar",
+    "日历插件"
+  ],
   "browserslist": [
     "> 1%",
     "last 2 versions",

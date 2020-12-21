@@ -3,12 +3,33 @@
 
 ## Install
 ```javascript
-	npm i calendar-vue -S
+	npm i vue-calendar-ui -S
 	
 	//main.js
-	import cv from "calendar-vue";
+	import cv from "vue-calendar-ui";
 	Vue.use(cv)
+
+	//页面使用
+	<vue-calendar-ui
+          ref="cv"
+          :mark-arr="mark"
+          title-color="#333"
+          arrow-color="#333"
+          crrentdaybg-color="#333"
+          hoverbg-color="#333"
+          hoverlabel-color="red"
+          weeklabel-color="red"
+          @onclickdate="onclickdate"
+          @onchangemonth="onchangemonth"
+	></vue-calendar-ui>
+	
+	//跳转指定月份api调用
+	this.$refs.cv.jumpToMonth("2020-03-12"); 
 ```
+
+## ui效果示例
+	[点击查看效果](https://Liweifei.github.io/calendar-vue/dist/)
+
 ## Attribute
 | 属性              | 类型  | 说明             | 默认  | 是否必传 |
 | ------------------- | ------- | ------------------ | ------- | -------- |
@@ -46,9 +67,7 @@
 ## API
 | 函数名         | 说明         | 参数格式         | 调用示例                                                                                                   |
 | ----------------- | -------------- | -------------------- | -------------------------------------------------------------------------------------------------------------- |
-| jumpToMonth(date) | 跳转到指定月份 | date对象或YYYY-MM-DD | <Calendar-vue
-          ref="cv"
-        ></Calendar-vue>
+| jumpToMonth(date) | 跳转到指定月份 | date对象或YYYY-MM-DD | <vue-calendar-ui ref="cv" ></vue-calendar-ui>
 
 //调用方法
 this.$refs.cv.jumpToMonth("2020-03-12"); |
