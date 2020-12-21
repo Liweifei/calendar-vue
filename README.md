@@ -1,5 +1,5 @@
 ## calendar-vue
-一款高效、简洁、功能丰富的考勤日历插件
+一款高效、简洁、功能丰富、宽度可自适应的pc端考勤日历插件
 
 ## Install
 ```javascript
@@ -67,10 +67,10 @@
 ## API
 | 函数名         | 说明         | 参数格式         | 调用示例                                                                                                   |
 | ----------------- | -------------- | -------------------- | -------------------------------------------------------------------------------------------------------------- |
-| jumpToMonth(date) | 跳转到指定月份 | date对象或YYYY-MM-DD | <vue-calendar-ui ref="cv" ></vue-calendar-ui>
+| jumpToMonth(date) | 跳转到指定月份 | date对象或YYYY-MM-DD | <vue-calendar-ui ref="cv" ></vue-calendar-ui>|
 
 //调用方法
-this.$refs.cv.jumpToMonth("2020-03-12"); |
+this.$refs.cv.jumpToMonth("2020-03-12"); 
 
 ## Other
 如果有其他问题邮件沟通1195669615@qq.com或者加qq1195669615
