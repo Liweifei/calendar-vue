@@ -27,8 +27,8 @@
 	this.$refs.cv.jumpToMonth("2020-03-12"); 
 ```
 
-## ui效果示例
-[点击查看效果](https://Liweifei.github.io/calendar-vue/dist/)
+## ui效果图
+![效果图](https://Liweifei.github.io/calendar-vue/demo.jpg)
 
 ## Attribute
 | 属性              | 类型  | 说明             | 默认  | 是否必传 |
