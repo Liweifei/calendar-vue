@@ -28,7 +28,7 @@
 ```
 
 ## ui效果示例
-	[点击查看效果](https://Liweifei.github.io/calendar-vue/dist/)
+[点击查看效果](https://Liweifei.github.io/calendar-vue/dist/)
 
 ## Attribute
 | 属性              | 类型  | 说明             | 默认  | 是否必传 |
