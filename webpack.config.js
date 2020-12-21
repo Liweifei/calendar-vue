@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'calendar-vue.js',
+    filename: 'vue-calendar-ui.js',
     libraryTarget: 'umd',//重要，输出格式，不然到时候引入不了
   },
   module: {

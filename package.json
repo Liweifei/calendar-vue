@@ -1,11 +1,11 @@
 {
   "name": "vue-calendar-ui",
   "description": "一款高效、简洁、功能丰富、宽度可自适应的pc端考勤日历插件",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "liweifei",
   "license": "MIT",
   "private": false,
-  "main": "dist/calendar-vue.js",
+  "main": "dist/vue-calendar-ui.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
