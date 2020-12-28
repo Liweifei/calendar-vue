@@ -48,15 +48,15 @@
 | markArr             | Array   | 需要标记的日期列表 | []      | FALSE    |
 
 ## markArr
-| 属性      | 类型  | 说明                                                             | 格式     |
-| ----------- | ------- | ------------------------------------------------------------------ | ---------- |
-| date        | String  | 需要标记的日期，注意小于10的月份和日期不需要在前面补0，如2020/2/14 | YYYY/MM/DD |
-| color       | String  | 要标记日期底部图标或字的颜色                         | #333333    |
-| isLabel     | Boolean | 要标记日期底部是否显示文字                            | true/false |
+| 属性      | 类型  | 说明                                                             | 格式     |默认|
+| ----------- | ------- | ------------------------------------------------------------------ | ---------- | ---------- |
+| date        | String  | 需要标记的日期，注意小于10的月份和日期不需要在前面补0，如2020/2/14 | YYYY/MM/DD ||
+| color       | String  | 要标记日期底部图标或字的颜色                         | #333333    ||
+| isLabel     | Boolean | 要标记日期底部是否显示文字                            | true/false |false|
 | label       | String  | 要标记日期底部设置显示文字时的label                 |            |
-| userPopover | Boolean | 有额外信息标记的时候是否使用默认的Popover显示   | true/false |
+| userPopover | Boolean | 有额外信息标记的时候是否使用默认的Popover显示   | true/false |false|
 | markContent | String  | 额外需要标注的内容                                        |            |
-| renderHtml  | Boolean | 额外需要标注的内容是否采用渲染html的格式         | true/false |
+| renderHtml  | Boolean | 额外需要标注的内容是否采用渲染html的格式         | true/false |false|
 
 
 ## 回调函数

@@ -27,7 +27,7 @@ body,
   height: 12px;
   position: absolute;
   left: 20px;
-  top: 18px;
+  top: 21px;
   border-top: 2px solid #4b7df6;
   border-left: 2px solid #4b7df6;
   transform: rotate(-45deg);
@@ -42,7 +42,7 @@ body,
   height: 12px;
   position: absolute;
   right: 20px;
-  top: 18px;
+  top: 21px;
   border-top: 2px solid #4b7df6;
   border-right: 2px solid #4b7df6;
   transform: rotate(45deg);
