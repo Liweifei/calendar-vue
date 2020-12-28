@@ -41,6 +41,8 @@
 | itemlabelColor      | String  | 默认日期字体颜色 | #333333 | FALSE    |
 | crrentdaybgColor    | String  | 今天的背景颜色 | #4b7df6 | FALSE    |
 | crrentdaylabelColor | String  | 今天的字体颜色 | #fff    | FALSE    |
+| clickdaybgColor    | String  | 当前点击日期的背景颜色 | rgba(51, 51, 51,0.8) | FALSE    |
+| clickdaylabelColor | String  | 当前点击日期的字体颜色 | #fff    | FALSE    |
 | hoverbgColor        | String  | 鼠标经过背景颜色 | #4b7df6 | FALSE    |
 | hoverlabelColor     | String  | 鼠标经过字体颜色 | #fff    | FALSE    |
 | prevColor           | String  | 当月之前的日期颜色 | #cccccc | FALSE    |

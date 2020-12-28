@@ -39,11 +39,15 @@
             :style="{
               'background-color': item.isToday
                 ? crrentdaybgColor
+                : item.date === clickDay
+                ? clickdaybgColor
                 : index === mouseIndex
                 ? hoverbgColor
                 : itembgColor,
               color: item.isToday
                 ? crrentdaylabelColor
+                : item.date === clickDay
+                ? clickdaylabelColor
                 : index === mouseIndex
                 ? hoverlabelColor
                 : item.whitchMonth === 'prev'
@@ -123,6 +127,16 @@ export default {
       type: String,
       default: "#fff",
     },
+    clickdaybgColor: {
+      //当前点击日期的背景颜色，默认rgba(51, 51, 51,0.8)
+      type: String,
+      default: "rgba(51, 51, 51,0.8)",
+    },
+    clickdaylabelColor: {
+      //当前点击日期的字体颜色，默认fff
+      type: String,
+      default: "#fff",
+    },
     hoverbgColor: {
       //鼠标经过背景颜色，默认4b7df6
       type: String,
@@ -164,6 +178,7 @@ export default {
     return {
       title: "",
       today: new Date(),
+      clickDay: null,
       labelArrBackup: ["一", "二", "三", "四", "五", "六"],
       labelArr: ["一", "二", "三", "四", "五", "六"], //"日"由是否星期天为起始日决定
       arrList: [],
@@ -223,6 +238,9 @@ export default {
     handleClickDate(item) {
       //点击日期
       const thisItem = { ...item };
+      const date = item.date;
+      this.clickDay = date;
+      item.whitchMonth != "current" && this.jumpToMonth(date);
       this.$emit("onclickdate", item);
     },
   },
