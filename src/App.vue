@@ -186,8 +186,11 @@ export default {
     };
   },
   watch: {
-    markArr() {
-      this.initMarkContent();
+    markArr: {
+      handler(val) {
+        this.initMarkContent();
+      },
+      deep:true
     },
   },
   created() {
@@ -214,10 +217,17 @@ export default {
     },
     initMarkContent() {
       //初始化需要mark的信息
-      this.markArr.forEach((item) => {
-        let markItem = this.arrList.find((list) => list.date === item.date);
-        if (markItem) Object.assign(markItem, item, { mark: true });
-      });
+      this.arrList.forEach(item=>{
+        item.mark=false;
+        let markItem = this.markArr.find((list) => list.date === item.date);
+        if (markItem) Object.assign(item, markItem, { mark: true });
+      })
+      // this.markArr.forEach((item) => {
+      //   console.log("--date"+item.date);
+      //   let markItem = this.arrList.find((list) => list.date === item.date);
+      //   if (markItem) Object.assign(markItem, item, { mark: true });
+      // });
+      this.$forceUpdate()
     },
     handlePrevAndNexMonth(type) {
       //点击获取下或下个月数据
