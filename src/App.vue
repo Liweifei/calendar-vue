@@ -283,7 +283,6 @@ export default {
         });
         Object.assign(item, { isBirthday: io });
       });
-      console.log(this.arrList);
       this.$forceUpdate();
     },
     handlePrevAndNexMonth(type) {
