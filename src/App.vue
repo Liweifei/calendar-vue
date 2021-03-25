@@ -101,7 +101,6 @@
 
 <script>
 import util from "./util";
-
 export default {
   name: "vue-calendar-ui",
   props: {
@@ -138,7 +137,7 @@ export default {
     birthdayImg: {
       //生日顶部图片
       type: String,
-      default: require("./assets/birthday.png"),
+      default: util.birthdayImg,
     },
     birthdaybgColor: {
       //当天生日背景颜色，默认#FFF5E7
@@ -212,7 +211,7 @@ export default {
       type: Array,
       default: () => {
         return [
-          // "2021/03/24"
+          "2021/03/22"
         ];
       },
     },
@@ -274,19 +273,17 @@ export default {
         );
         if (markItem) Object.assign(item, markItem, { mark: true });
       });
-      // this.markArr.forEach((item) => {
-      //   console.log("--date"+item.date);
-      //   let markItem = this.arrList.find((list) => list.date === item.date);
-      //   if (markItem) Object.assign(markItem, item, { mark: true });
-      // });
       this.$forceUpdate();
     },
     initBirthday() {
       //初始化需要生日信息
       this.arrList.forEach((item) => {
-        const io=this.birthdayArr.includes(item.date)
+        const io = this.birthdayArr.some((date) => {
+          return util.dateFormatStr(new Date(date)) === item.date;
+        });
         Object.assign(item, { isBirthday: io });
       });
+      console.log(this.arrList);
       this.$forceUpdate();
     },
     handlePrevAndNexMonth(type) {
