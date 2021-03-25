@@ -138,3 +138,10 @@ body,
     margin-left: 0;
     bottom: -15px;
 }
+.cv-today-birthday{
+  position: absolute;
+  right: -5px;
+  top: -14px;
+  width: 25px;
+  height: 25px;
+}

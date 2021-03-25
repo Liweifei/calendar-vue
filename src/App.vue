@@ -37,14 +37,18 @@
               'cv-today': item.isToday,
             }"
             :style="{
-              'background-color': item.isToday
+              'background-color': item.isBirthday
+                ? birthdaybgColor
+                : item.isToday
                 ? crrentdaybgColor
                 : item.date === clickDay
                 ? clickdaybgColor
                 : index === mouseIndex
                 ? hoverbgColor
                 : itembgColor,
-              color: item.isToday
+              color: item.isBirthday
+                ? birthdaylabelColor
+                : item.isToday
                 ? crrentdaylabelColor
                 : item.date === clickDay
                 ? clickdaylabelColor
@@ -60,12 +64,26 @@
             @mouseleave="mouseIndex = null"
             @click="handleClickDate(item)"
           >
+            <!-- 
+            上面style匹配
+            0、生日样式放最大
+            1、当天的样式权重第2
+            2、点击的效果放第3
+            3、hover的效果放第4
+            4、最后是默认的样式
+           -->
             {{ item.id }}
             <span
               class="cv-click-Box"
               v-if="item.mark && item.userPopover"
               @click="showPopover(item)"
             ></span>
+            <img
+              v-if="item.isBirthday"
+              class="cv-today-birthday"
+              :src="birthdayImg"
+              alt=""
+            />
           </div>
           <span
             v-if="item.mark"
@@ -117,6 +135,21 @@ export default {
       type: String,
       default: "#333333",
     },
+    birthdayImg: {
+      //生日顶部图片
+      type: String,
+      default: require("./assets/birthday.png"),
+    },
+    birthdaybgColor: {
+      //当天生日背景颜色，默认#FFF5E7
+      type: String,
+      default: "#FFF5E7",
+    },
+    birthdaylabelColor: {
+      //当天生日字体颜色，默认fff
+      type: String,
+      default: "#333333",
+    },
     crrentdaybgColor: {
       //今天的背景颜色，默认4b7df6
       type: String,
@@ -163,13 +196,23 @@ export default {
       default: () => {
         return [
           // {
-          //   date: "2020/12/14", //YYYY-MM-DD,注意小于10的月份和日期不需要在前面补0
+          //   date: "2021/03/24", //YYYY-MM-DD
           //   color: "#EE1E1E", //图标或字的颜色
           //   isLabel: true,
           //   label: "旷旷旷旷旷旷旷旷",
+          //   userPopover:true,//默认false
           //   markContent: "<span style='color:red'>今天是个好日子</span>", //需要标注的内容
           //   renderHtml: true, //需要标注的内容是否采用渲染html的格式
           // },
+        ];
+      },
+    },
+    birthdayArr: {
+      //需要标记的日期列表
+      type: Array,
+      default: () => {
+        return [
+          // "2021/03/24"
         ];
       },
     },
@@ -187,10 +230,16 @@ export default {
   },
   watch: {
     markArr: {
-      handler(val) {
+      handler() {
         this.initMarkContent();
       },
-      deep:true
+      deep: true,
+    },
+    birthdayArr: {
+      handler() {
+        this.initBirthday();
+      },
+      deep: true,
     },
   },
   created() {
@@ -214,20 +263,31 @@ export default {
     getList() {
       this.arrList = util.getMonthList(this.today);
       this.initMarkContent();
+      this.initBirthday();
     },
     initMarkContent() {
       //初始化需要mark的信息
-      this.arrList.forEach(item=>{
-        item.mark=false;
-        let markItem = this.markArr.find((list) => list.date === item.date);
+      this.arrList.forEach((item) => {
+        item.mark = false;
+        let markItem = this.markArr.find(
+          (list) => util.dateFormatStr(new Date(list.date)) === item.date
+        );
         if (markItem) Object.assign(item, markItem, { mark: true });
-      })
+      });
       // this.markArr.forEach((item) => {
       //   console.log("--date"+item.date);
       //   let markItem = this.arrList.find((list) => list.date === item.date);
       //   if (markItem) Object.assign(markItem, item, { mark: true });
       // });
-      this.$forceUpdate()
+      this.$forceUpdate();
+    },
+    initBirthday() {
+      //初始化需要生日信息
+      this.arrList.forEach((item) => {
+        const io=this.birthdayArr.includes(item.date)
+        Object.assign(item, { isBirthday: io });
+      });
+      this.$forceUpdate();
     },
     handlePrevAndNexMonth(type) {
       //点击获取下或下个月数据
