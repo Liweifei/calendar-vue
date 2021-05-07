@@ -289,7 +289,10 @@ export default {
       //点击获取下或下个月数据
       const today = this.today;
       this.today = util.resetprevOrNextDateObj(today, type);
-      this.$emit("onchangemonth", this.today);
+      this.$emit("onchangemonth", {
+        day1:this.today,
+        type
+      });
       this.getList();
     },
     jumpToMonth(date) {
