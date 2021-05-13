@@ -10,13 +10,13 @@ body,
   width: 100%;
   height: 100%;
   min-width: 460px;
-  min-height: 394px;
+  /* min-height: 394px; */
 }
 .cv-controlBox {
   width: 100%;
   height: 56px;
   line-height: 56px;
-  padding: 0 20px;
+  padding: 0 40px;
   box-sizing: border-box;
   background-color: #f5f7fa;
   position: relative;
@@ -26,7 +26,7 @@ body,
   width: 12px;
   height: 12px;
   position: absolute;
-  left: 20px;
+  left: 40px;
   top: 21px;
   border-top: 2px solid #4b7df6;
   border-left: 2px solid #4b7df6;
@@ -41,7 +41,7 @@ body,
   width: 12px;
   height: 12px;
   position: absolute;
-  right: 20px;
+  right: 40px;
   top: 21px;
   border-top: 2px solid #4b7df6;
   border-right: 2px solid #4b7df6;
@@ -105,6 +105,7 @@ body,
     height: 100%;
     left: 0;
     top: 0;
+    cursor: pointer;
 }
 .cv-today {
   background-color: #4b7df6;
@@ -144,4 +145,31 @@ body,
   top: -14px;
   width: 25px;
   height: 25px;
+}
+
+
+/* small */
+.vue-calendar-small{
+  min-width: 320px;
+}
+.vue-calendar-small .cv-controlBox{
+  height: 46px;
+  line-height: 46px;
+}
+.vue-calendar-small .cv-arrowLeft,.vue-calendar-small .cv-arrowRight{
+  top: 16px;
+}
+.vue-calendar-small .cv-top {
+  margin-top: 20px;
+}
+.vue-calendar-small .cv-item {
+  margin-top: 20px;
+}
+.vue-calendar-small .cv-date {
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+}
+.vue-calendar-small .cv-contentBox{
+  padding-bottom: 20px;
 }

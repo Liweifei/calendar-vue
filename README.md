@@ -1,4 +1,4 @@
-## vue-calendar-ui(当前版本 V1.1.1)
+## vue-calendar-ui(当前版本 V1.1.2)
 
 一款高效、简洁、功能丰富、宽度可自适应的 pc 端考勤日历插件
 
@@ -41,6 +41,7 @@ Vue2.x
 
 | 属性                 | 类型    | 说明                               | 默认                 | 是否必传 |
 | -------------------- | ------- | ---------------------------------- | -------------------- | -------- |
+| min                  | Boolean | 考勤样式尺寸(小)                   | FALSE                | FALSE    |
 | sunday-start         | Boolean | 日历是否周天开始                   | FALSE                | FALSE    |
 | title-color          | String  | title 颜色                         | #333333              | FALSE    |
 | weeklabel-color      | String  | 礼拜几字体颜色                     | #9da5b1              | FALSE    |

@@ -1,5 +1,5 @@
 <template>
-  <div class="vue-calendar-ui">
+  <div class="vue-calendar-ui" :class="{'vue-calendar-small':min}">
     <div class="cv-controlBox">
       <div
         class="cv-arrowLeft"
@@ -92,6 +92,11 @@
             :style="{ 'background-color': item.color, color: item.color }"
           >
             {{ item.isLabel ? item.label : null }}
+            <span
+              class="cv-click-Box"
+              v-if="item.mark && item.userPopover"
+              @click="showPopover(item)"
+            ></span>
           </span>
         </li>
       </ul>
@@ -105,6 +110,10 @@ export default {
   name: "vue-calendar-ui",
   props: {
     // sundayStart: false,// 默认是周一开始，周一或周天开始相应的位置也要改一下
+    min: {
+      type: Boolean,
+      default: false,
+    },
     sundayStart: {
       type: Boolean,
       default: false,
@@ -195,11 +204,20 @@ export default {
       default: () => {
         return [
           // {
-          //   date: "2021/03/24", //YYYY-MM-DD
+          //   date: "2021/05/24", //YYYY-MM-DD
+          //   color: "#EE1E1E", //图标或字的颜色
+          //   isLabel: false,
+          //   label: "旷旷旷旷旷旷旷旷",
+          //   userPopover: true, //默认false
+          //   markContent: "<span style='color:red'>今天是个好日子</span>", //需要标注的内容
+          //   renderHtml: true, //需要标注的内容是否采用渲染html的格式
+          // },
+          // {
+          //   date: "2021/05/23", //YYYY-MM-DD
           //   color: "#EE1E1E", //图标或字的颜色
           //   isLabel: true,
           //   label: "旷旷旷旷旷旷旷旷",
-          //   userPopover:true,//默认false
+          //   userPopover: true, //默认false
           //   markContent: "<span style='color:red'>今天是个好日子</span>", //需要标注的内容
           //   renderHtml: true, //需要标注的内容是否采用渲染html的格式
           // },
@@ -211,7 +229,7 @@ export default {
       type: Array,
       default: () => {
         return [
-          "2021/03/22"
+          // "2021/05/31", "2021/05/30"
         ];
       },
     },
@@ -290,8 +308,8 @@ export default {
       const today = this.today;
       this.today = util.resetprevOrNextDateObj(today, type);
       this.$emit("onchangemonth", {
-        day1:this.today,
-        type
+        day1: this.today,
+        type,
       });
       this.getList();
     },
