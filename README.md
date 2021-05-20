@@ -1,4 +1,4 @@
-## vue-calendar-ui(当前版本 V1.1.2)
+## vue-calendar-ui(当前版本 V1.1.3)
 
 一款高效、简洁、功能丰富、宽度可自适应的 pc 端考勤日历插件
 
@@ -43,7 +43,8 @@ Vue2.x
 | -------------------- | ------- | ---------------------------------- | -------------------- | -------- |
 | min                  | Boolean | 考勤样式尺寸(小)                   | FALSE                | FALSE    |
 | sunday-start         | Boolean | 日历是否周天开始                   | FALSE                | FALSE    |
-| title-color          | String  | title 颜色                         | #333333              | FALSE    |
+| titlebg-color        | String  | title 背景颜色                     | #f5f7fa              | FALSE    |
+| title-color          | String  | title 字体颜色                     | #333333              | FALSE    |
 | weeklabel-color      | String  | 礼拜几字体颜色                     | #9da5b1              | FALSE    |
 | arrow-color          | String  | 箭头颜色                           | #4b7df6              | FALSE    |
 | itembg-color         | String  | 默认日期背景颜色                   | #fff                 | FALSE    |
@@ -97,6 +98,10 @@ this.$refs.cv.jumpToMonth("2020-03-12");
 
 ## Other
 
-1、如果有其他问题邮件沟通1195669615@qq.com或者加 qq1195669615。若插件能够帮助到您，期待您的 star 哦！
+1、后继会继续更新 vue3 版本
 
-2、后继会继续更新 vue3 版本
+2、如果有其他问题邮件沟通1195669615@qq.com或者加 qq1195669615。若插件能够帮助到您，期待您的 star 哦！
+
+3、欢迎加入 qq 交流群（目前正在起步中）
+
+![qq交流群](./qshare.jpg)

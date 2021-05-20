@@ -1,6 +1,6 @@
 <template>
   <div class="vue-calendar-ui" :class="{'vue-calendar-small':min}">
-    <div class="cv-controlBox">
+    <div class="cv-controlBox"  :style="{ 'background-color': titlebgColor }">
       <div
         class="cv-arrowLeft"
         :style="{ 'border-color': arrowColor }"
@@ -118,8 +118,13 @@ export default {
       type: Boolean,
       default: false,
     },
+    titlebgColor: {
+      //title颜色，默认f5f7fa
+      type: String,
+      default: "#f5f7fa",
+    },
     titleColor: {
-      //title颜色，默认333333
+      //title字体颜色，默认333333
       type: String,
       default: "#333333",
     },
