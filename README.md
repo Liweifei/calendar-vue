@@ -1,4 +1,4 @@
-## vue-calendar-ui(当前版本 V1.1.3)
+## vue-calendar-ui(当前版本 V1.1.4)
 
 一款高效、简洁、功能丰富、宽度可自适应的 pc 端考勤日历插件
 
@@ -91,10 +91,9 @@ Vue2.x
 
 | 函数名            | 说明           | 参数格式               | 调用示例                                      |
 | ----------------- | -------------- | ---------------------- | --------------------------------------------- |
-| jumpToMonth(date) | 跳转到指定月份 | date 对象或 YYYY-MM-DD | <vue-calendar-ui ref="cv" ></vue-calendar-ui> |
+| jumpToMonth(date) | 跳转到指定月份 | date 对象或 YYYY-MM-DD | this.$refs.cv.jumpToMonth("2020-03-12") |
+| jumpToDay(date) | 跳转到指定日期并标记当前日 | date 对象或 YYYY-MM-DD | this.$refs.cv.jumpToDay("2020-03-12") |
 
-//调用方法
-this.$refs.cv.jumpToMonth("2020-03-12");
 
 ## Other
 

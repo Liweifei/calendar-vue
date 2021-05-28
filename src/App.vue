@@ -323,6 +323,12 @@ export default {
       this.today = util.strToDateObj(date); //先初始化时间，保证为date对象
       this.getList();
     },
+    jumpToDay(date) {
+      //跳转到指定日期
+      this.today = util.strToDateObj(date); //先初始化时间，保证为date对象
+      this.clickDay = util.dateFormatStr(this.today);
+      this.getList();
+    },
     showPopover(item) {
       //点击展示popover
       this.$SHOW_CV_POPOVER(item);
