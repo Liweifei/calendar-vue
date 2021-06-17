@@ -1,6 +1,6 @@
 <template>
-  <div class="vue-calendar-ui" :class="{'vue-calendar-small':min}">
-    <div class="cv-controlBox"  :style="{ 'background-color': titlebgColor }">
+  <div class="vue-calendar-ui" :class="{ 'vue-calendar-small': min }">
+    <div class="cv-controlBox" :style="{ 'background-color': titlebgColor }">
       <div
         class="cv-arrowLeft"
         :style="{ 'border-color': arrowColor }"
@@ -292,7 +292,9 @@ export default {
       this.arrList.forEach((item) => {
         item.mark = false;
         let markItem = this.markArr.find(
-          (list) => util.dateFormatStr(new Date(list.date)) === item.date
+          (list) =>
+            util.dateFormatStr(new Date(list.date)) ===
+            util.dateFormatStr(new Date(item.date))
         );
         if (markItem) Object.assign(item, markItem, { mark: true });
       });
