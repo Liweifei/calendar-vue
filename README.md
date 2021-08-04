@@ -1,4 +1,4 @@
-## vue-calendar-ui(当前版本 V2.0.0)
+## vue-calendar-ui(当前版本 V2.0.1)
 
 一款高效、简洁、功能丰富、宽度可自适应的 pc 端考勤日历插件
 
@@ -33,7 +33,7 @@ Vue2.x
 	this.$refs.cv.jumpToMonth("2020-03-12");
 ```
 
-## V1.x版本ui 效果图
+## V1.x版本ui 效果图(请使用1.1.5)
 
 ![效果图](./demo.jpg)
 

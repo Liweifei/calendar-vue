@@ -2,7 +2,7 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: process.env.NODE_ENV==='development'?'./src/main.js':'./lib/main.js',//开发和打包入口不同,
+  entry: process.env.NODE_ENV==='development'?'./src/main.js':'./lib/index.js',//开发和打包入口不同,
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',

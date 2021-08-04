@@ -1,7 +1,7 @@
 {
   "name": "vue-calendar-ui",
   "description": "一款高效、简洁、功能丰富、宽度可自适应的pc端考勤日历插件",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "liweifei",
   "license": "MIT",
   "private": false,
