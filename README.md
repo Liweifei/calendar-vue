@@ -1,4 +1,4 @@
-## vue-calendar-ui(当前版本 V1.1.5)
+## vue-calendar-ui(当前版本 V2.0.0)
 
 一款高效、简洁、功能丰富、宽度可自适应的 pc 端考勤日历插件
 
@@ -33,9 +33,13 @@ Vue2.x
 	this.$refs.cv.jumpToMonth("2020-03-12");
 ```
 
-## ui 效果图
+## V1.x版本ui 效果图
 
 ![效果图](./demo.jpg)
+
+## V2.x版本ui 效果图
+
+![效果图](./demo2.jpg)
 
 ## Attribute
 
@@ -43,7 +47,7 @@ Vue2.x
 | -------------------- | ------- | ---------------------------------- | -------------------- | -------- |
 | min                  | Boolean | 考勤样式尺寸(小)                   | FALSE                | FALSE    |
 | sunday-start         | Boolean | 日历是否周天开始                   | FALSE                | FALSE    |
-| titlebg-color        | String  | title 背景颜色                     | #f5f7fa              | FALSE    |
+| titlebg-color        | String  | title 背景颜色(V2.X版本已废弃)                     | #f5f7fa              | FALSE    |
 | title-color          | String  | title 字体颜色                     | #333333              | FALSE    |
 | weeklabel-color      | String  | 礼拜几字体颜色                     | #9da5b1              | FALSE    |
 | arrow-color          | String  | 箭头颜色                           | #4b7df6              | FALSE    |
