@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <vue-calendar-ui min :mark-arr="markArr" :birthday-arr="birthdayArr"></vue-calendar-ui>
+    <vue-calendar-ui min :mark-arr="markArr" :birthday-arr="birthdayArr" future-disabled></vue-calendar-ui>
   </div>
 </template>
 

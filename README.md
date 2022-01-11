@@ -1,4 +1,4 @@
-## vue-calendar-ui(当前版本 V2.0.1)
+## vue-calendar-ui(当前版本 V2.0.2)
 
 一款高效、简洁、功能丰富、宽度可自适应的 pc 端考勤日历插件
 
@@ -33,11 +33,11 @@ Vue2.x
 	this.$refs.cv.jumpToMonth("2020-03-12");
 ```
 
-## V1.x版本ui 效果图(请使用1.1.5)
+## V1.x 版本 ui 效果图(请使用 1.1.5)
 
 ![效果图](./demo.jpg)
 
-## V2.x版本ui 效果图
+## V2.x 版本 ui 效果图
 
 ![效果图](./demo2.jpg)
 
@@ -46,8 +46,9 @@ Vue2.x
 | 属性                 | 类型    | 说明                               | 默认                 | 是否必传 |
 | -------------------- | ------- | ---------------------------------- | -------------------- | -------- |
 | min                  | Boolean | 考勤样式尺寸(小)                   | FALSE                | FALSE    |
+| future-disabled      | Boolean | 是否不可跳转到未来月份             | FALSE                | FALSE    |
 | sunday-start         | Boolean | 日历是否周天开始                   | FALSE                | FALSE    |
-| titlebg-color        | String  | title 背景颜色(V2.X版本已废弃)                     | #f5f7fa              | FALSE    |
+| titlebg-color        | String  | title 背景颜色(V2.X 版本已废弃)    | #f5f7fa              | FALSE    |
 | title-color          | String  | title 字体颜色                     | #333333              | FALSE    |
 | weeklabel-color      | String  | 礼拜几字体颜色                     | #9da5b1              | FALSE    |
 | arrow-color          | String  | 箭头颜色                           | #4b7df6              | FALSE    |
@@ -93,11 +94,10 @@ Vue2.x
 
 ## API
 
-| 函数名            | 说明           | 参数格式               | 调用示例                                      |
-| ----------------- | -------------- | ---------------------- | --------------------------------------------- |
-| jumpToMonth(date) | 跳转到指定月份 | date 对象或 YYYY-MM-DD | this.$refs.cv.jumpToMonth("2020-03-12") |
-| jumpToDay(date) | 跳转到指定日期并标记当前日 | date 对象或 YYYY-MM-DD | this.$refs.cv.jumpToDay("2020-03-12") |
-
+| 函数名            | 说明                       | 参数格式               | 调用示例                                |
+| ----------------- | -------------------------- | ---------------------- | --------------------------------------- |
+| jumpToMonth(date) | 跳转到指定月份             | date 对象或 YYYY-MM-DD | this.$refs.cv.jumpToMonth("2020-03-12") |
+| jumpToDay(date)   | 跳转到指定日期并标记当前日 | date 对象或 YYYY-MM-DD | this.$refs.cv.jumpToDay("2020-03-12")   |
 
 ## Other
 

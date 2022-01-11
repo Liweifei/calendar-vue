@@ -5,6 +5,7 @@
         {{ today | formatDate }}
         <i
           class="ivcufont ivcu-liulangengduo cv-arrowRight"
+          :class="{'cv-arrow-disabled':arrowrDisabled}"
           :style="{ color: arrowColor }"
           @click="handlePrevAndNexMonth('next')"
         ></i>
@@ -109,11 +110,16 @@ import util from "./util";
 export default {
   name: "vue-calendar-ui",
   props: {
-    // sundayStart: false,// 默认是周一开始，周一或周天开始相应的位置也要改一下
     min: {
       type: Boolean,
       default: false,
     },
+    futureDisabled: {
+      //是否不可跳转到未来月份
+      type: Boolean,
+      default: false,
+    },
+    // sundayStart: false,// 默认是周一开始，周一或周天开始相应的位置也要改一下
     sundayStart: {
       type: Boolean,
       default: false,
@@ -242,6 +248,7 @@ export default {
   data() {
     return {
       title: "",
+      arrowrDisabled:false,//右箭头是否不可用
       today: new Date(),
       clickDay: null,
       labelArrBackup: ["一", "二", "三", "四", "五", "六"],
@@ -274,6 +281,7 @@ export default {
     }
     this.today = util.strToDateObj(this.today); //先初始化时间，保证为date对象
     this.getList();
+    this.checkCurrentMonth();
   },
   filters: {
     formatDate(date) {
@@ -312,6 +320,7 @@ export default {
     },
     handlePrevAndNexMonth(type) {
       //点击获取下或下个月数据
+      if(type ==="next" &&　this.futureDisabled && this.arrowrDisabled)return;
       const today = this.today;
       this.today = util.resetprevOrNextDateObj(today, type);
       this.$emit("onchangemonth", {
@@ -319,6 +328,15 @@ export default {
         type,
       });
       this.getList();
+      this.checkCurrentMonth();
+    },
+    checkCurrentMonth(){
+      if(this.futureDisabled){
+        const currentMonth = new Date().getFullYear()+"."+new Date().getMonth();
+        const showDate=util.strToDateObj(this.today)
+        const showMonth= showDate.getFullYear()+"."+showDate.getMonth();; //先初始化时间，保证为date对象
+        this.arrowrDisabled=showMonth>=currentMonth
+      }
     },
     jumpToMonth(date) {
       //点击获取指定月数据
