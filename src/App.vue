@@ -1,6 +1,12 @@
 <template>
   <div class="main">
-    <vue-calendar-ui min :mark-arr="markArr" :birthday-arr="birthdayArr" future-disabled></vue-calendar-ui>
+    <vue-calendar-ui
+      ref="vc"
+      min
+      :mark-arr="markArr"
+      :birthday-arr="birthdayArr"
+      future-disabled
+    ></vue-calendar-ui>
   </div>
 </template>
 
@@ -32,13 +38,16 @@ export default {
       birthdayArr: ["2021/08/11", "2021/08/30"],
     };
   },
+  mounted() {
+    this.$refs.vc.jumpToDay("2022-07-01");
+  },
 };
 </script>
 <style>
-  .main{
-    width: 600px;
-    height: 400px;
-    margin: auto;
-    margin-top: 100px;
-  }
+.main {
+  width: 600px;
+  height: 400px;
+  margin: auto;
+  margin-top: 100px;
+}
 </style>
